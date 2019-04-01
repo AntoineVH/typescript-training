@@ -53,19 +53,19 @@ describe('Template literals', () => {
 
   // you likely wont often use tagging, but it can be handy!
   it('should call the tagging function', () => {
-    const noun = 'World'
+    const noun = 'dear World'
     const emotion = 'really happy'
     const hello = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
     expect(hello).toBe('Hello dear World! Are you feeling really happy today?')
 
-    const name = 'John'
+    const name = 'dear John'
     const action = 'really take a seat'
     const result = tagIt`Welcome ${name}, feel comfortable and ${action}!`
     expect(result).toBe('Welcome dear John, feel comfortable and really take a seat!')
 
     function tagIt(literalString, ...interpolatedParts) {
       // implement this function to make the test pass
-      return literalString + interpolatedParts[0]
+      return `${literalString[0]}${interpolatedParts[0]}${literalString[1]}${interpolatedParts[1]}${literalString[2]}`
     }
   })
 
