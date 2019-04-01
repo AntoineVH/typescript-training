@@ -5,7 +5,15 @@ describe('arrow functions', () => {
 		// 'fnAdd' - as a regular function
 		// 'arrowAdd' - as an arrow function
 
-		let fnAdd, arrowAdd;
+		let fnAdd;
+
+		const arrowAdd = (value1, value2) => {
+			return value1 + value2
+		}
+
+		function fnAdd (value1, value2) {
+			return value1 + value2
+		}
 
 		expect(fnAdd.length).toBe(2);
 		expect(arrowAdd.length).toBe(2);
@@ -15,7 +23,15 @@ describe('arrow functions', () => {
 	describe('are great for defining simple calculations', () => {
 		// Write following lambda functions, performing subtraction, multiplication and division
 
-		let arrowSub, arrowMul, arrowDiv;
+		const arrowSub = (value1, value2) => {
+			return value1 - value2
+		}
+		const arrowMul = (value1, value2) => {
+			return value1 * value2
+		}
+		const arrowDiv = (value1, value2) => {
+			return value1 / value2
+		}
 
 		it('subtracts numbers correctly', () => {
 			expect(arrowSub(20, -15)).toEqual(35)
@@ -42,7 +58,15 @@ describe('arrow functions', () => {
 		// 1, for x = 1
 		// fib(x-1) + fib(x-2), for x > 1
 
-		let fnFib, arrowFib;
+		function fnFib (x) {
+			let fibo = fib(x-1) + fib(x-2), for x > 1
+			return fibo
+		}
+
+		const arrowFib = x => {
+			let fibo = fib(x-1) + fib(x-2), for x > 1
+			return fibo
+		}
 
 		[fnFib, arrowFib].forEach(function(fn){
 			expect(fn(0)).toBe(0);
