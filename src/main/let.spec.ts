@@ -5,8 +5,8 @@ describe('let declarations', () => {
   it('can be used in place of `var`', () => {
     // Declare musician using 'let'
     // Declare isDead using 'let'
-    let musician: string;
-    let isDead: any;
+    let musician = 'John Lennon'
+    let isDead = true;
     
     expect(musician).toBe('John Lennon')
     expect(isDead).toBe(true)

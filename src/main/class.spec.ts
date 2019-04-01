@@ -2,9 +2,9 @@ describe('class', () => {
 
   it('has a constructor for initialization', () => {
     class Musician {
-      instrument: string;
+      instrument: string
       constructor(instrumentPassed?: string) {
-        this.instrument = instrumentPassed;
+        this.instrument = instrumentPassed
       }
     }
     // Create a Musician class
@@ -41,24 +41,20 @@ describe('class', () => {
   it('can have instance methods', () => {
 
     class Musician {
-      instrument = 'guitar'
-      constructor(instrumentPassed: string) {
-        this.instrument = instrumentPassed;
+      instrument: any;
+      constructor(instrument: any) {
+        this.instrument = instrument;
       }
-
       play() {
-        return 'I\'m playing drums'
-      }
+        return `I'm playing ${this.instrument}`
+      } 
     }
-    // Create a Musician class, pass in the instrument to the constructor,
-    // and add a play function to the class definition
-
-    const musician = new Musician()
+    const musician = new Musician('drums')
 
     expect(musician.play).toBeDefined()
     // expect(Musician.play).toBeUndefined()
     expect(musician.play()).toBe("I'm playing drums")
-  })
+})
 
   it('can have static methods and properties', () => {
 
@@ -81,15 +77,15 @@ describe('class', () => {
     // and storing the reference (in instances array) and returns the instance
 
     class Musician {
-      instrument : string;
-      static instances: Musician[] = [];
+      instrument : string
+      static instances: Musician[] = []
       constructor(instrument: string) {
-        this.instrument = instrument;
+        this.instrument = instrument
       }
       static create(instrument: string): Musician {
-        const musician = new Musician(instrument);
-        Musician.instances.push(musician);
-        return musician;
+        const musician = new Musician(instrument)
+        Musician.instances.push(musician)
+        return musician
       }
   }
 
@@ -163,15 +159,15 @@ describe('class', () => {
 
     class Musician {
       instrument: String;
-      bandIn = [];
+      bandIn = []
       constructor(instrument: any) {
-        this.instrument = instrument;
+        this.instrument = instrument
       }
       get allBands() {
         return `this musician played in ${this.bandIn.join(', ')}`
       }
       set band(value) {
-        this.bandIn.push(value);
+        this.bandIn.push(value)
       }
     }
 
